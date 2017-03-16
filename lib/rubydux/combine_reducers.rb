@@ -20,7 +20,7 @@ module Rubydux
 
     def dispatch(action)
       puts "ACTION_RECEIVED => #{action}" # TODO remove this puts
-      stores.each do |name, store|
+      stores.each do |_, store|
         if store.respond_to?(:dispatch)
           store.dispatch(action)
         end
